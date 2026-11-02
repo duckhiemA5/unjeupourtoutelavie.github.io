@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Space - Kho kỷ niệm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="stars"></canvas>
+
+    <header class="header">
+        <div class="logo">✦ MEMORY SPACE ✦</div>
+        <p class="subtitle">Nơi lưu giữ những khoảnh khắc đáng nhớ</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h2>Gửi kỷ niệm của bạn</h2>
+
+            <input
+                type="text"
+                id="memoryTitle"
+                placeholder="Tên kỷ niệm..."
+                maxlength="100"
+            >
+
+            <label for="files" class="upload-button">
+                <span>＋</span> Chọn ảnh để tải lên
+            </label>
+
+            <input
+                type="file"
+                id="files"
+                accept="image/*"
+                multiple
+                hidden
+            >
+
+            <p id="uploadStatus"></p>
+
+            <button id="manageButton" class="manage-button">
+                Quản lý ảnh
+            </button>
+
+            <div id="hiddenPanel" class="hidden-panel" hidden>
+                <h3>Ảnh đã ẩn</h3>
+                <div id="hiddenList"></div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="gallery-title">✧ Những kỷ niệm của chúng ta ✧</h2>
+
+            <div id="gallery" class="gallery"></div>
+
+            <div id="empty" class="empty">
+                Chưa có kỷ niệm nào được lưu lại...
+            </div>
+        </section>
+    </main>
+
+    <div id="viewer" class="viewer">
+        <button id="closeViewer" class="close-viewer">×</button>
+        <img id="bigImage" src="" alt="Ảnh kỷ niệm">
+        <h2 id="bigCaption"></h2>
+        <p id="bigDate"></p>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
